@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Interest Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .selected {
+      outline: 3px solid #3B82F6;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow px-6 py-4 flex justify-between items-center">
+    <div class="text-xl font-semibold text-gray-800 flex items-center space-x-2">
+      <span>⬥</span>
+      <span>Career Sage</span>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <!-- Progress -->
+    <div class="mb-6">
+      <p class="text-sm font-medium mb-2">Step 1 of 5</p>
+      <div class="w-full bg-gray-200 rounded-full h-2">
+        <div class="bg-blue-500 h-2 rounded-full" style="width: 20%;"></div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-center mb-2">Discover your career interests</h2>
+    <p class="text-center text-gray-600 mb-10">Answer a few questions to see careers that might interest you</p>
+
+    <!-- Questions -->
+    <form id="quizForm" class="space-y-10">
+      <!-- Question 1 -->
+      <div>
+        <h3 class="font-medium text-lg mb-4">Question 1/20: Which image best represents you?</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <img src="https://source.unsplash.com/400x300/?laptop,work" class="option cursor-pointer rounded-lg" data-question="1" data-option="A" />
+          <img src="https://source.unsplash.com/400x300/?design,architecture" class="option cursor-pointer rounded-lg" data-question="1" data-option="B" />
+          <img src="https://source.unsplash.com/400x300/?children,teaching" class="option cursor-pointer rounded-lg" data-question="1" data-option="C" />
+          <img src="https://source.unsplash.com/400x300/?nature,forest" class="option cursor-pointer rounded-lg" data-question="1" data-option="D" />
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div>
+        <h3 class="font-medium text-lg mb-4">Question 2/20: Which image best represents you?</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <img src="https://source.unsplash.com/400x300/?coding,developer" class="option cursor-pointer rounded-lg" data-question="2" data-option="A" />
+          <img src="https://source.unsplash.com/400x300/?blueprint,drawing" class="option cursor-pointer rounded-lg" data-question="2" data-option="B" />
+          <img src="https://source.unsplash.com/400x300/?kids,education" class="option cursor-pointer rounded-lg" data-question="2" data-option="C" />
+          <img src="https://source.unsplash.com/400x300/?farming,field" class="option cursor-pointer rounded-lg" data-question="2" data-option="D" />
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <div class="text-center pt-6">
+        <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">Next</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    const selections = {};
+
+    document.querySelectorAll('.option').forEach(img => {
+      img.addEventListener('click', () => {
+        const q = img.dataset.question;
+        const selected = document.querySelectorAll(`.option[data-question='${q}']`);
+        selected.forEach(el => el.classList.remove('selected'));
+        img.classList.add('selected');
+        selections[q] = img.dataset.option;
+        console.log(`Selected Q${q}: ${selections[q]}`);
+      });
+    });
+
+    document.getElementById('quizForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Validate all questions answered (demo: only 2 questions here)
+      if (!selections[1] || !selections[2]) {
+        alert("Please select an option for each question.");
+        return;
+      }
+
+      // Submit logic or go to next page
+      console.log("Form submitted with selections:", selections);
+      alert("Answers submitted! (Replace this with navigation or storage)");
+    });
+  </script>
+</body>
+</html>

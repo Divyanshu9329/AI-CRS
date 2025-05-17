@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-6 py-4 border-b bg-white">
+    <div class="text-xl font-semibold">Career Sage</div>
+    <div class="flex items-center space-x-4">
+      <button class="text-gray-500 hover:text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 17h5l-1.405-1.405M19 13V7a2 2 0 00-2-2h-2.586a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 0011.586 2H8a2 2 0 00-2 2v7M7 21h10a2 2 0 002-2v-5H5v5a2 2 0 002 2z"/>
+        </svg>
+      </button>
+      <img class="h-9 w-9 rounded-full object-cover" src="https://i.pravatar.cc/300" alt="User">
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="max-w-5xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold mb-2">Explore careers</h1>
+    <p class="text-gray-500 mb-6">Browse a variety of career options and find the one that's right for you</p>
+
+    <!-- Search Input -->
+    <div class="mb-6">
+      <input
+        type="text"
+        placeholder="Search for a career"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Filter Chips -->
+    <div class="flex flex-wrap gap-2 mb-10">
+      <span class="px-4 py-2 bg-gray-100 text-sm rounded-full cursor-pointer">Domain</span>
+      <span class="px-4 py-2 bg-gray-100 text-sm rounded-full cursor-pointer">Salary range</span>
+      <span class="px-4 py-2 bg-gray-100 text-sm rounded-full cursor-pointer">Growth rate</span>
+      <span class="px-4 py-2 bg-gray-100 text-sm rounded-full cursor-pointer">Job type</span>
+      <span class="px-4 py-2 bg-gray-100 text-sm rounded-full cursor-pointer">Education level</span>
+      <span class="px-4 py-2 bg-gray-100 text-sm rounded-full cursor-pointer">Years of experience</span>
+      <span class="px-4 py-2 bg-gray-100 text-sm rounded-full cursor-pointer">Company size</span>
+    </div>
+
+    <!-- Popular Domains -->
+    <div class="mb-8">
+      <h2 class="text-lg font-semibold mb-3">Popular domains</h2>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Software engineering</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Product management</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Data science</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Marketing</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Finance</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Design</span>
+      </div>
+    </div>
+
+    <!-- Popular Salary Ranges -->
+    <div class="mb-8">
+      <h2 class="text-lg font-semibold mb-3">Popular salary ranges</h2>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">$100k - $150k</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">$150k - $200k</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">$200k - $250k</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">$250k - $300k</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">$300k+</span>
+      </div>
+    </div>
+
+    <!-- Popular Growth Rates -->
+    <div>
+      <h2 class="text-lg font-semibold mb-3">Popular growth rates</h2>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">High growth</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Medium growth</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Low growth</span>
+        <span class="px-4 py-2 bg-gray-200 rounded-full text-sm cursor-pointer">Declining</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
